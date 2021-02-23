@@ -71,8 +71,16 @@ keyboard.addEventListener('click', function (e) {
 
 function playSound(button) {
     audio.src = button.getAttribute('data-sound');
-    audio.play();
-    button.classList.add('playing');
+    let playPromise = audio.play();
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {
+                audio.play();
+                button.classList.add('playing');
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
     button.addEventListener('transitionend', removeHighlight)
 }
 
@@ -87,7 +95,3 @@ function removeHighlight(e) {
 }
 
 window.addEventListener('keydown', clickOnKeyboard);
-
-
-
-
