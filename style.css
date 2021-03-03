@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    background-image: url(https://images.pexels.com/photos/5828453/pexels-photo-5828453.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.keyboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.key {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin: 30px 20px;
+    border: solid 4px #000;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 10px 5px #000;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+kbd {
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.sound {
+    color: #fff;
+}
+
+.playing {
+    box-shadow: 0 0 10px 5px #7FFFD4;
+    border: solid 4px #7FFFD4;
+    transform: scale(1.2);
+}
